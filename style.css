@@ -1,0 +1,464 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgba(226, 203, 49, 0.86);
+  background-image: linear-gradient(120deg,
+      rgba(226, 203, 49, 0.86) 0%,
+      rgba(218, 143, 0, 0.68) 50%);
+}
+
+svg {
+  color: black;
+}
+
+.galeria {
+  display: flex;
+  flex-direction: row;
+  min-width: 100vh;
+  position: absolute;
+  translate: 0 -50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0.7;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+
+img {
+  border: 5px solid black;
+  margin: 2px;
+  max-width: 500px;
+  height: 250px;
+}
+
+
+
+/*__FUENTES__*/
+
+/* 'Barlow Condensed' */
+/* 'DM Serif Text' */
+/* 'Kalam' */
+/* 'Oswald' */
+/* 'Ruda' */
+/* 'Satisfy' */
+
+h1 {
+  font-family: Kalam;
+  text-align: center;
+}
+
+
+h2 {
+  font-family: DM Serif Text;
+}
+
+h4 {
+  font-family: Oswald;
+}
+
+p {
+  font-family: Barlow Condensed;
+}
+
+li {
+  font-family: Barlow Condensed;
+  font-size: 18px;
+}
+
+
+
+#nombre_local {
+  text-align: center;
+  font-size: 90px;
+  font-family: Satisfy;
+}
+
+/*# NAVEGACION INICAL */
+#navegacion {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: space-evenly;
+  perspective: 3px;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+
+#navegacion a {
+  color: black;
+  font-family: Ruda;
+  font-size: 25px;
+  border: 1.5px solid;
+  padding: 8px;
+  transition: 0.8s;
+  cursor: pointer;
+  border-radius: 1px;
+  opacity: .7;
+  background-image: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
+}
+
+#navegacion a:hover {
+  opacity: 1;
+  border-radius: 5px;
+  box-shadow: 5px 6px 13px 5px rgba(255, 255, 255, 0.63);
+
+
+}
+
+/*# NAVEGACION FLOTANTE */
+#menu_flotante {
+  position: fixed;
+  translate: 0 -250px;
+  z-index: 10;
+}
+
+#menu_flotante h1 {
+  display: flex;
+  margin: 0;
+}
+
+.item-menu-flotante {
+  display: flex;
+  align-items: center;
+}
+
+
+.pelota {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.7s;
+  border: 1px #070707 solid;
+  background-image: linear-gradient(to right,
+      rgb(0, 0, 0),
+      rgb(253, 224, 71),
+      rgb(250, 204, 21));
+}
+
+
+.pelotita {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 4px;
+  cursor: pointer;
+  transition: 0.7s;
+  border: 1px #070707 solid;
+  background-image: linear-gradient(to right,
+      rgb(254, 240, 138),
+      rgb(253, 224, 71),
+      rgb(250, 204, 21));
+}
+
+
+
+.pelota:hover {
+  translate: 6px;
+  background-image: linear-gradient(to right,
+      rgb(254, 240, 138),
+      rgb(187, 247, 208),
+      rgb(134, 239, 172));
+  box-shadow: 5px 5px 3px -3px rgba(20, 22, 29, 1);
+}
+
+.pelotita:hover {
+  translate: 6px;
+  background-image: linear-gradient(to right,
+      rgb(254, 240, 138),
+      rgb(187, 247, 208),
+      rgb(134, 239, 172));
+  box-shadow: 5px 5px 3px -3px rgba(20, 22, 29, 1);
+}
+
+
+
+.pelota:hover+p.text-menu {
+  visibility: visible;
+}
+
+.pelotita:hover+p.text-menu {
+  visibility: visible;
+}
+
+/*. texto del menu flotante: */
+
+.text-menu {
+  margin-left: 8px;
+  visibility: hidden;
+  transition: .2s;
+  color: black;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+
+
+/*# FORMULARIO */
+
+#formulario_reservas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 10px;
+  padding: 150px;
+}
+
+#formulario_reservas>h1 {
+  font-family: Oswald;
+  font-size: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min-content;
+}
+
+form input {
+  margin: 8px;
+  padding: 16px;
+  border: 2px solid black;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-radius: 2px;
+  border: 3px solid orange;
+  transition: 1s;
+  outline: none;
+}
+
+/*. BOTON DE RESERVA DEL FORMULARIO */
+
+.btn-reservas {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg,
+      #ff512f 0%,
+      #f09819 51%,
+      #ff512f 100%);
+  cursor: pointer;
+}
+
+.btn-reservas:hover {
+  background-position: right center;
+  color: black;
+}
+
+.btn-reservas:active {
+  transform: scale(0.95);
+}
+
+/*# CARTAS HABITUALES */
+
+#cartas_habituales {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cartas_habituales h1 {
+  font-size: 35px;
+}
+
+/*# CARTAS EVENTUALES */
+
+#cartas_eventuales {
+  display: flex;
+  gap: 8px;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#cartas_eventuales article {
+  width: 500px;
+}
+
+/*# MENU ACORDION */
+
+.accordion-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  max-width: 700px;
+  padding: 10px 20px 20px;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 34px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0;
+  cursor: pointer;
+  color: #4e4e49;
+}
+
+p {
+  color: rgba(48, 69, 92, 0.8);
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  max-height: 800px;
+  opacity: 1;
+  margin-top: 14px;
+}
+
+ul {
+  list-style: none;
+  padding: 0 20px 20px;
+  margin: 0;
+  border: 1px solid;
+  background-image: linear-gradient(to right,
+      rgb(254, 249, 195),
+      rgb(253, 224, 71),
+      rgb(234, 179, 8));
+  border-radius: 5px;
+}
+
+ul li {
+  padding-bottom: 4px;
+  padding-top: 18px;
+  border-top: 2px dashed #22a4d3;
+}
+
+ul li:nth-child(1) {
+  border: none;
+}
+
+ul li .arrow {
+  position: absolute;
+  transform: translate(-6px, 16px);
+  right: 0;
+}
+
+ul li .arrow:before,
+ul li .arrow:after {
+  content: "";
+  position: absolute;
+  background-color: #292b2a;
+  width: 3px;
+  height: 9px;
+}
+
+ul li .arrow:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+
+ul li .arrow:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+
+ul li input[type="checkbox"] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+
+ul li input[type="checkbox"]:checked~p {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translate(0, 50%);
+}
+
+ul li input[type="checkbox"]:checked~.arrow:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+
+ul li input[type="checkbox"]:checked~.arrow:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
+
+.transition,
+p,
+ul li .arrow:before,
+ul li .arrow:after {
+  transition: all 0.25s ease-in-out;
+}
+
+.flipIn,
+h1,
+ul li {
+  animation: flipdown 0.5s ease both;
+}
+
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  80% {
+    transform: rotateX(8deg);
+  }
+
+  83% {
+    transform: rotateX(6deg);
+  }
+
+  92% {
+    transform: rotateX(-3deg);
+  }
+
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg);
+  }
+}
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 25px 150px;
+  padding: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 160px;
+  background-color: #22a4d3;
+}
+
+
+footer h4{
+  text-align: center;
+}
+
+footer p{
+  margin: 0;
+}
